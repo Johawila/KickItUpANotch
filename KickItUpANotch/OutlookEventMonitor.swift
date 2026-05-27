@@ -20,7 +20,10 @@ final class OutlookEventMonitor {
 
     private var timer: Timer?
 
-    private static let icsURL = URL(string: "https://outlook.office365.com/owa/calendar/2beb112434a44d7686d026d22b571e3a@medhelpcare.com/e78914cba18942e0ba24966c4e040f097475866478687856850/calendar.ics")!
+    private static var icsURL: URL? {
+        guard let raw = UserDefaults.standard.string(forKey: "outlookCalendarICSURL"), !raw.isEmpty else { return nil }
+        return URL(string: raw)
+    }
 
     init() {
         fetch()
@@ -77,7 +80,8 @@ final class OutlookEventMonitor {
     // MARK: - Fetch
 
     private func fetch() {
-        URLSession.shared.dataTask(with: Self.icsURL) { [weak self] data, _, _ in
+        guard let url = Self.icsURL else { return }
+        URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
             guard let self, let data, let raw = String(data: data, encoding: .utf8) else { return }
             let parsed = Self.parse(ics: raw)
             DispatchQueue.main.async { self.events = parsed }
