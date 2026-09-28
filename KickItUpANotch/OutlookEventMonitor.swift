@@ -41,28 +41,28 @@ final class OutlookEventMonitor {
         switch scenario {
         case .now:
             monitor.events = [
-                CalendarEvent(title: "Frukostupdate MedHelp Care", timeUntil: "Now", secondsUntil: 0),
+                CalendarEvent(title: "Team Standup", timeUntil: "Now", secondsUntil: 0),
                 CalendarEvent(title: "1:1 with Anna", timeUntil: "in 45m", secondsUntil: 2700),
                 CalendarEvent(title: "Sprint Planning", timeUntil: "in 2h 30m", secondsUntil: 9000),
                 CalendarEvent(title: "Quarterly Review", timeUntil: "in 4h", secondsUntil: 14400)
             ]
         case .critical:
             monitor.events = [
-                CalendarEvent(title: "Frukostupdate MedHelp Care", timeUntil: "in 8m", secondsUntil: 480),
+                CalendarEvent(title: "Team Standup", timeUntil: "in 8m", secondsUntil: 480),
                 CalendarEvent(title: "1:1 with Anna", timeUntil: "in 45m", secondsUntil: 2700),
                 CalendarEvent(title: "Sprint Planning", timeUntil: "in 2h 30m", secondsUntil: 9000),
                 CalendarEvent(title: "Quarterly Review", timeUntil: "in 4h", secondsUntil: 14400)
             ]
         case .warning:
             monitor.events = [
-                CalendarEvent(title: "Frukostupdate MedHelp Care", timeUntil: "in 22m", secondsUntil: 1320),
+                CalendarEvent(title: "Team Standup", timeUntil: "in 22m", secondsUntil: 1320),
                 CalendarEvent(title: "1:1 with Anna", timeUntil: "in 1h 10m", secondsUntil: 4200),
                 CalendarEvent(title: "Sprint Planning", timeUntil: "in 3h", secondsUntil: 10800),
                 CalendarEvent(title: "Quarterly Review", timeUntil: "in 4h 30m", secondsUntil: 16200)
             ]
         case .normal:
             monitor.events = [
-                CalendarEvent(title: "Frukostupdate MedHelp Care", timeUntil: "in 1h 15m", secondsUntil: 4500),
+                CalendarEvent(title: "Team Standup", timeUntil: "in 1h 15m", secondsUntil: 4500),
                 CalendarEvent(title: "1:1 with Anna", timeUntil: "in 3h", secondsUntil: 10800),
                 CalendarEvent(title: "Sprint Planning", timeUntil: "in 5h", secondsUntil: 18000),
                 CalendarEvent(title: "Quarterly Review", timeUntil: "in 7h", secondsUntil: 25200)
